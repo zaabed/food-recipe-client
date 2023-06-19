@@ -1,5 +1,5 @@
-import React, { createContext } from 'react';
-import { createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import React, { createContext, useEffect, useState } from 'react';
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
 import app from '../firebase/firebase.config';
 
 export const AuthContext = createContext(null);
@@ -7,7 +7,7 @@ export const AuthContext = createContext(null);
 const auth = getAuth(app);
 
 const AuthProvider = ({ children }) => {
-    const user = { displayName: 'Zabed Khan' };
+    const [user, setUser] = useState(null);
 
     // -----Email Password Authentication-----
 
@@ -19,6 +19,22 @@ const AuthProvider = ({ children }) => {
         return signInWithEmailAndPassword(auth, email, password);
     }
 
+    const logOut = () => {
+        return signOut(auth);
+    }
+
+
+    // -----Authentication Observer-----
+
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, loggedUser => {
+            setUser(loggedUser);
+        })
+        return () => {
+            return unsubscribe();
+        }
+    }, [])
+
 
 
 
@@ -27,7 +43,8 @@ const AuthProvider = ({ children }) => {
     const AuthInfo = {
         user,
         createUser,
-        loginUser
+        loginUser,
+        logOut
     }
 
     return (

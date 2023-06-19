@@ -6,7 +6,13 @@ import { FaLocationArrow, FaUserCircle } from "react-icons/fa";
 
 const Header = () => {
 
-    const { user } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => { })
+            .catch(error => console.log(error))
+    }
 
     return (
         <div>
@@ -37,14 +43,15 @@ const Header = () => {
 
                     <div className='mx-2'>
                         {user &&
-                            <p><FaUserCircle style={{ fontSize: '3rem' }}></FaUserCircle></p>
+                            <p>{user.email}</p>
+                            // <FaUserCircle style={{ fontSize: '3rem' }}></FaUserCircle>
                         }
                     </div>
 
                     <div>
                         {
                             user ?
-                                <button className="btn bg-amber-300">LogOut</button> :
+                                <button onClick={handleLogOut} className="btn bg-amber-300">LogOut</button> :
                                 <Link to='/login'><button className="btn bg-amber-300">Login</button>
                                 </Link>
 
