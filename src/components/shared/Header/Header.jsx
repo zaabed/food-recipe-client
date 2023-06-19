@@ -43,7 +43,7 @@ const Header = () => {
 
                     <div className='mx-2'>
                         {user &&
-                            <p>{user.email}</p>
+                            <p>{user.displayName}</p>
                             // <FaUserCircle style={{ fontSize: '3rem' }}></FaUserCircle>
                         }
                     </div>

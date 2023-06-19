@@ -42,7 +42,7 @@ const Registration = () => {
             .then(result => {
                 const registerUser = result.user;
                 form.reset();
-                setSuccess('User Has Created Successfully Register');
+                setSuccess('User Has Created Successfully Account');
             })
             .catch(error => {
                 setError(error.message)

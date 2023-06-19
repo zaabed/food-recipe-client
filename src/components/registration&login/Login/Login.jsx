@@ -1,9 +1,11 @@
 import React, { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
+import { FaGithub, FaGoogle } from 'react-icons/fa';
 
 const Login = () => {
-    const { loginUser } = useContext(AuthContext);
+    const { loginUser, googleAuth } = useContext(AuthContext);
+    // console.log(googleAuth);
     const [success, setSuccess] = useState('');
     const [error, setError] = useState('');
     const navigate = useNavigate();
@@ -20,6 +22,17 @@ const Login = () => {
             .then(result => {
                 const loggedUser = result.user;
                 form.reset();
+                setSuccess('SuccessFully Login Your Account');
+                navigate('/');
+            })
+            .catch(error => setError(error.message))
+    }
+
+    const googleSignIN = () => {
+        googleAuth()
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser);
                 setSuccess('SuccessFully Login Your Account');
                 navigate('/');
             })
@@ -70,9 +83,15 @@ const Login = () => {
                                 <input type="password" name='password' placeholder="password" className="input input-bordered" required />
                             </div>
                             <div className="form-control mt-6">
-                                <button className="btn btn-primary">Login</button>
+                                <button className="btn bg-amber-300">Login</button>
                             </div>
-                            <p>New User? please <Link to='/signUP'><b>SignUp</b></Link> </p>
+                            <p>New User? please <Link to='/register'><b>SignUp</b></Link> </p>
+                            <hr className='mt-4' />
+                            <p className='text-sm'><b>Login Another Way</b></p>
+                            <div className='flex mx-auto text-4xl mt-3'>
+                                <Link><FaGoogle onClick={googleSignIN} className='me-3 p-1 rounded'></FaGoogle></Link>
+                                <Link><FaGithub className=' p-1'></FaGithub></Link>
+                            </div>
                         </form>
                     </div>
                 </div>
