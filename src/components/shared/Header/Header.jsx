@@ -39,7 +39,7 @@ const Header = () => {
                         <Link to='contactUs' className='mx-3 hover:hover:bg-amber-100 p-2 rounded'>Contact Us</Link>
                     </ul>
                 </div>
-                <div className="navbar-end flex items-center">
+                <div className="navbar-end flex items-start">
 
                     <div className='mx-2'>
                         {user &&
