@@ -4,7 +4,7 @@ import { AuthContext } from '../../../providers/AuthProvider';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
 
 const Login = () => {
-    const { loginUser, googleAuth } = useContext(AuthContext);
+    const { loginUser, googleAuth, GitHubAuth } = useContext(AuthContext);
     // console.log(googleAuth);
     const [success, setSuccess] = useState('');
     const [error, setError] = useState('');
@@ -21,8 +21,8 @@ const Login = () => {
         loginUser(email, password)
             .then(result => {
                 const loggedUser = result.user;
-                form.reset();
                 setSuccess('SuccessFully Login Your Account');
+                form.reset();
                 navigate('/');
             })
             .catch(error => setError(error.message))
@@ -30,6 +30,17 @@ const Login = () => {
 
     const googleSignIN = () => {
         googleAuth()
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser);
+                setSuccess('SuccessFully Login Your Account');
+                navigate('/');
+            })
+            .catch(error => setError(error.message))
+    }
+
+    const gitHubSignIN = () => {
+        GitHubAuth()
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
@@ -90,7 +101,7 @@ const Login = () => {
                             <p className='text-sm'><b>Login Another Way</b></p>
                             <div className='flex mx-auto text-4xl mt-3'>
                                 <Link><FaGoogle onClick={googleSignIN} className='me-3 p-1 rounded'></FaGoogle></Link>
-                                <Link><FaGithub className=' p-1'></FaGithub></Link>
+                                <Link><FaGithub onClick={gitHubSignIN} className=' p-1'></FaGithub></Link>
                             </div>
                         </form>
                     </div>
