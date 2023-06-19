@@ -6,7 +6,7 @@ import img3 from '../../../../assets/images/img3.png';
 
 const Banner = () => {
     return (
-        <div className='grid justify-items-center mt-5 '>
+        <div className='grid justify-items-center mt-5'>
 
             <div className='grid lg:grid-cols-2 sm:grid-cols-1  items-center'>
                 <div>
@@ -19,23 +19,26 @@ const Banner = () => {
                 </div>
             </div>
 
-            <div className='grid lg:grid-cols-3 sm:grid-cols-1 gap-10  mt-5'>
-                <div className="card card-compact w-96  bg-red-600 shadow-xl p-4 ">
-                    <figure><img className='h-64 w-64' src={img1} alt="Shoes" /></figure>
-                    <div className="card-body">
-                        <h2 className="card-title text-4xl font-semibold text-white">PICKUP FOOD</h2>
+            <div className=' mt-5'>
+                <h1 className='text-4xl text-center font-bold'>HOW IT WORK</h1>
+                <div className='grid lg:grid-cols-3 sm:grid-cols-1 gap-10  mt-5'>
+                    <div className="card card-compact w-96  bg-red-600 shadow-xl p-4 ">
+                        <figure><img className='h-64 w-64' src={img1} alt="Shoes" /></figure>
+                        <div className="card-body">
+                            <h2 className="card-title text-4xl font-semibold text-white">PICKUP FOOD</h2>
+                        </div>
                     </div>
-                </div>
-                <div className="card card-compact w-96  bg-amber-300 shadow-xl p-4 ">
-                    <figure><img className='h-64 w-64' src={img2} alt="Shoes" /></figure>
-                    <div className="card-body">
-                        <h2 className="card-title text-4xl font-semibold">GET DELIVERY</h2>
+                    <div className="card card-compact w-96  bg-amber-300 shadow-xl p-4 ">
+                        <figure><img className='h-64 w-64' src={img2} alt="Shoes" /></figure>
+                        <div className="card-body">
+                            <h2 className="card-title text-4xl font-semibold">GET DELIVERY</h2>
+                        </div>
                     </div>
-                </div>
-                <div className="card card-compact w-96 bg-amber-50 shadow-xl p-4 ">
-                    <figure><img className='h-64 w-64' src={img3} alt="Shoes" /></figure>
-                    <div className="card-body">
-                        <h2 className="card-title text-4xl font-semibold">EXPLORE SHOPE</h2>
+                    <div className="card card-compact w-96 bg-amber-50 shadow-xl p-4 ">
+                        <figure><img className='h-64 w-64' src={img3} alt="Shoes" /></figure>
+                        <div className="card-body">
+                            <h2 className="card-title text-4xl font-semibold">EXPLORE SHOPE</h2>
+                        </div>
                     </div>
                 </div>
             </div>

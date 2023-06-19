@@ -12,6 +12,7 @@ import FAQ from './components/pages/FAQ/FAQ';
 import ContactUs from './components/pages/Contact Us/ContactUs';
 import Registration from './components/registration&login/Registration/Registration';
 import Login from './components/registration&login/Login/Login';
+import AuthProvider from './providers/AuthProvider';
 
 const router = createBrowserRouter([
   {
@@ -48,6 +49,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </React.StrictMode>,
 )

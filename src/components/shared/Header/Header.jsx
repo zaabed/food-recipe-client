@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../../assets/images/logo1.jpg';
+import { AuthContext } from '../../../providers/AuthProvider';
+import { FaLocationArrow, FaUserCircle } from "react-icons/fa";
 
 const Header = () => {
+
+    const { user } = useContext(AuthContext);
+
     return (
         <div>
             <div className="navbar bg-amber-50">
@@ -28,8 +33,25 @@ const Header = () => {
                         <Link to='contactUs' className='mx-3 hover:hover:bg-amber-100 p-2 rounded'>Contact Us</Link>
                     </ul>
                 </div>
-                <div className="navbar-end">
-                    <Link to='/login' className="btn">Login</Link>
+                <div className="navbar-end flex items-center">
+
+                    <div className='mx-2'>
+                        {user &&
+                            <p><FaUserCircle style={{ fontSize: '3rem' }}></FaUserCircle></p>
+                        }
+                    </div>
+
+                    <div>
+                        {
+                            user ?
+                                <button className="btn bg-amber-300">LogOut</button> :
+                                <Link to='/login'><button className="btn bg-amber-300">Login</button>
+                                </Link>
+
+                        }
+
+                    </div>
+
                 </div>
             </div>
         </div>
