@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaQuoteRight, FaThumbsUp } from "react-icons/fa";
+import { FaThumbsUp } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 
 
