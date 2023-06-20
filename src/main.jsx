@@ -13,6 +13,8 @@ import ContactUs from './components/pages/Contact Us/ContactUs';
 import Registration from './components/registration&login/Registration/Registration';
 import Login from './components/registration&login/Login/Login';
 import AuthProvider from './providers/AuthProvider';
+import ChefRecipes from './components/pages/Home/ChefRecipes/ChefRecipes';
+// import Chef from './components/pages/Home/Chef/Chef';
 
 const router = createBrowserRouter([
   {
@@ -21,7 +23,13 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <Banner></Banner>
+        element: <Banner></Banner>,
+        loader: () => fetch('http://localhost:5000/chefDetails')
+      },
+      {
+        path: ':id',
+        element: <ChefRecipes></ChefRecipes>,
+        loader: ({ params }) => fetch(`http://localhost:5000/chefDetails/${params.id}`)
       },
       {
         path: '/aboutUs',
