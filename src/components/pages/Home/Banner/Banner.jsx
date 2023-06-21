@@ -52,7 +52,7 @@ const Banner = () => {
 
 
             <div className='mt-10'>
-                <h1 className='text-4xl text-center font-bold'>HERE  <span className='text-red-600'>AVAILABLE</span>CHEF</h1>
+                <h1 className='text-4xl text-center font-bold'>HERE  <span className='text-red-600'>AVAILABLE</span> CHEF</h1>
                 <div className='mt-5 grid lg:grid-cols-3 sm:grid-cols-1 gap-10'>
 
                     {
