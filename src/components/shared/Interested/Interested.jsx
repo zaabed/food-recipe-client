@@ -14,14 +14,14 @@ const Interested = () => {
         <div>
             <div className="hero  h-96 mt-14" style={{ backgroundImage: `url(${workImg})` }}>
                 <div className="hero-overlay bg-opacity-0"></div>
-                <div>
-                    <h1 className=" text-7xl font-bold text-white">INTERESTED TO WORD WITH US ?</h1>
-                    <p className="text-white">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+                <div className='text-center w-fit'>
+                    <h1 className=" text-7xl font-bold text-white">INTERESTED TO WORK WITH US ?</h1>
+                    <p className="text-white mt-2">"I'm interested in this job because I can see that, in this role, my skills could help solve this problem within your company. I also see an opportunity for me to learn and grow these skills, so we both would benefit personally, professionally, and financially.</p>
                 </div>
             </div>
 
             <div className='d-flex p-5 mt-14'>
-                <h1 className=" text-5xl font-bold text-red-600 text-center mb-10">OUR PARTNERS</h1>
+                <h1 className=" text-5xl font-bold text-red-600 text-center mb-10">OUR PARTNER'S</h1>
                 <Marquee speed={80} className='mb-5'>
                     <img src={brandIMg1} alt="Image" class="w-full h-auto " />
                     <img src={brandIMg2} alt="Image" class="w-full h-auto " />

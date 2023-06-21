@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import logo from '../../../assets/images/logo1.jpg';
 import { AuthContext } from '../../../providers/AuthProvider';
 // import { FaLocationArrow, FaUserCircle } from "react-icons/fa";
-// import ActiveLink from '../../../ActiveLink/ActiveLink';
+import ActiveLink from '../../../ActiveLink/ActiveLink';
 
 const Header = () => {
 
@@ -33,9 +33,9 @@ const Header = () => {
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 font-semibold">
-                        <Link to='/' className='mx-3 hover:hover:bg-amber-100 p-2 rounded'>Home</Link>
-                        <Link to='aboutUs' className='mx-3 hover:hover:bg-amber-100 p-2 rounded'>About Us</Link>
-                        <Link to='blogs' className='mx-3 hover:hover:bg-amber-100 p-2 rounded'>Blogs</Link>
+                        <ActiveLink to='/' className='mx-3 hover:hover:bg-amber-100 p-2 rounded'>Home</ActiveLink>
+                        <ActiveLink to='aboutUs' className='mx-3 hover:hover:bg-amber-100 p-2 rounded'>AboutUs</ActiveLink>
+                        <ActiveLink to='blogs' className='mx-3 hover:hover:bg-amber-100 p-2 rounded'>Blogs</ActiveLink>
                     </ul>
                 </div>
                 <div className="navbar-end flex items-start">

@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyDJLgwUnrMomt8tRlJO59BGtJb0RSt3KUo",
-    authDomain: "cookie-and-kate-recipe.firebaseapp.com",
-    projectId: "cookie-and-kate-recipe",
-    storageBucket: "cookie-and-kate-recipe.appspot.com",
-    messagingSenderId: "887366031101",
-    appId: "1:887366031101:web:970d27237ad2791741d094"
+    apiKey: import.meta.env.VITE_APIKEY,
+    authDomain: import.meta.env.VITE_AUTHDOMAIN,
+    projectId: import.meta.env.VITE_PROJECTID,
+    storageBucket: import.meta.env.VITE_STORAGEBUCKET,
+    messagingSenderId: import.meta.env.VITE_MESSAGINGSENDERID,
+    appId: import.meta.env.VITE_APPLEID
 };
 
 // Initialize Firebase

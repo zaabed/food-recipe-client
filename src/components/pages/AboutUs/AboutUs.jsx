@@ -38,7 +38,11 @@ const AboutUs = () => {
 
                 <div className="p-4">
                     <h2 className='text-justify text-4xl font-bold text-red-600'>ABOUT ME</h2>
-                    <p className='text-justify font-semibold mt-4'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate, quasi in? Cumque, voluptas necessitatibus beatae quia laborum, laudantium sapiente accusantium eos, odit dolores tenetur quibusdam dolor incidunt alias libero eum fuga officia possimus. Dolore, unde? Cum modi magni, dolor mollitia ex blanditiis dolorum sequi error nostrum sapiente inventore aut perspiciatis.</p>
+                    <p className='text-justify font-semibold mt-4'>Cookies & Cups enabled online presence takes a refreshingly no-frills, no nonsense approach. Large, high quality images of the restaurant's interior immerse you in the dining experience, while an automatically rotating image gallery of the eatery's various Asian-inspired dishes will have your mouth watering.
+
+                        And Bombaywok's website doesn't just let its food do the talking, but its customers, too. Utilizing GoDaddy's social media integrations, the restaurant has pulled through its most persuasive reviews from Facebook, showcasing them on its site in an interactive carousel format.
+
+                    </p>
                 </div>
             </div>
 

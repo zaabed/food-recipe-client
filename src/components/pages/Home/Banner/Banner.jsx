@@ -1,5 +1,5 @@
 import React from 'react';
-import banner from '../../../../assets/images/banner.png';
+import banner from '../../../../assets/images/chef56.avif';
 import img1 from '../../../../assets/images/img1.png';
 import img2 from '../../../../assets/images/img2.png';
 import img3 from '../../../../assets/images/img3.png';
@@ -21,12 +21,12 @@ const Banner = () => {
                     <h3 className='text-2xl font-medium mt-5'>For <span className='text-green-600'>Fresh & Delicious</span> home Food</h3>
                 </div>
                 <div>
-                    <img className='w-full' src={banner} alt="" />
+                    <img className='w-full rounded-md' src={banner} alt="" />
                 </div>
             </div>
 
 
-            <div className=' mt-5'>
+            <div className=' mt-14'>
                 <h1 className='text-4xl text-center font-bold'>HOW IT <span className='text-amber-300'>WORK</span></h1>
                 <div className='grid lg:grid-cols-3 sm:grid-cols-1 gap-10  mt-5'>
                     <div className="card card-compact w-96  bg-red-600 shadow-xl p-4 ">

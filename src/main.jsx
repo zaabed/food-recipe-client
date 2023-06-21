@@ -14,6 +14,7 @@ import AuthProvider from './providers/AuthProvider';
 import ChefRecipes from './components/pages/Home/ChefRecipes/ChefRecipes';
 import PrivateRoute from './privateRoute/PrivateRoute/PrivateRoute';
 import Blogs from './components/pages/Blogs/Blogs';
+import NotFound from './components/notFound/NotFound';
 
 
 const router = createBrowserRouter([
@@ -51,7 +52,7 @@ const router = createBrowserRouter([
   },
   {
     path: '*',
-    element: <h1>Page Not Found!!4O4!!!</h1>
+    element: <NotFound></NotFound>
   },
 ])
 
