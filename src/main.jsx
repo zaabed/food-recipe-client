@@ -25,12 +25,12 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Banner></Banner>,
-        loader: () => fetch('http://localhost:5000/chefDetails')
+        loader: () => fetch('https://food-recipe-website-server-zaabed.vercel.app/chefDetails')
       },
       {
         path: ':id',
         element: <PrivateRoute><ChefRecipes></ChefRecipes></PrivateRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/chefDetails/${params.id}`)
+        loader: ({ params }) => fetch(`https://food-recipe-website-server-zaabed.vercel.app/chefDetails/${params.id}`)
       },
       {
         path: '/aboutUs',
