@@ -14,6 +14,7 @@ import Registration from './components/registration&login/Registration/Registrat
 import Login from './components/registration&login/Login/Login';
 import AuthProvider from './providers/AuthProvider';
 import ChefRecipes from './components/pages/Home/ChefRecipes/ChefRecipes';
+import PrivateRoute from './privateRoute/PrivateRoute/PrivateRoute';
 // import Chef from './components/pages/Home/Chef/Chef';
 
 const router = createBrowserRouter([
@@ -28,7 +29,7 @@ const router = createBrowserRouter([
       },
       {
         path: ':id',
-        element: <ChefRecipes></ChefRecipes>,
+        element: <PrivateRoute><ChefRecipes></ChefRecipes></PrivateRoute>,
         loader: ({ params }) => fetch(`http://localhost:5000/chefDetails/${params.id}`)
       },
       {

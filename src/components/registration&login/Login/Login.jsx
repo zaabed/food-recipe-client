@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
 
@@ -9,6 +9,8 @@ const Login = () => {
     const [success, setSuccess] = useState('');
     const [error, setError] = useState('');
     const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
 
     const handleLogin = event => {
         event.preventDefault();
@@ -23,7 +25,7 @@ const Login = () => {
                 const loggedUser = result.user;
                 setSuccess('SuccessFully Login Your Account');
                 form.reset();
-                navigate('/');
+                navigate(from, { replace: true });
             })
             .catch(error => setError(error.message))
     }
@@ -34,7 +36,7 @@ const Login = () => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
                 setSuccess('SuccessFully Login Your Account');
-                navigate('/');
+                navigate(from, { replace: true });
             })
             .catch(error => setError(error.message))
     }
@@ -45,7 +47,7 @@ const Login = () => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
                 setSuccess('SuccessFully Login Your Account');
-                navigate('/');
+                navigate(from, { replace: true });
             })
             .catch(error => setError(error.message))
     }

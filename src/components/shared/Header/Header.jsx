@@ -44,14 +44,11 @@ const Header = () => {
                     <div className='mx-2'>
                         {user &&
                             <span>
-                                {/* <img className='w-12 h-12 rounded-md' src={user.photoURL} alt="" /> */}
+
                                 <div className="tooltip tooltip-bottom" data-tip={user.displayName}>
                                     <button><img className='w-12 h-12 rounded-md' src={user.photoURL} alt="" /></button>
                                 </div>
                             </span>
-
-                            // <FaUserCircle style={{ fontSize: '3rem' }}></FaUserCircle>
-                            // <p>{user.displayName}</p>
                         }
                     </div>
 

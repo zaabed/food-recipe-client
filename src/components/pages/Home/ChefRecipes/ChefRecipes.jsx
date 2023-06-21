@@ -1,11 +1,14 @@
 import React from 'react';
-import { Link, useLoaderData } from 'react-router-dom';
-import { FaFacebook, FaInstagram, FaThumbsUp, FaTwitter, FaWhatsapp } from "react-icons/fa";
+import { Link, useLoaderData, useNavigation } from 'react-router-dom';
+import { FaArrowLeft, FaFacebook, FaInstagram, FaThumbsUp, FaTwitter, FaWhatsapp } from "react-icons/fa";
 
 
 const ChefRecipes = () => {
     const recipes = useLoaderData();
-    // console.log(recipes);
+    const navigation = useNavigation;
+    const back = () => {
+        navigation(-1)
+    }
     return (
         <div>
             <div className="card lg:card-side bg-base-100 shadow-xl">
@@ -33,6 +36,7 @@ const ChefRecipes = () => {
                         </div>
 
                     </div>
+
                 </div>
             </div>
 
@@ -106,6 +110,10 @@ const ChefRecipes = () => {
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <div className="card-actions justify-center mt-10">
+                <Link to='/'><button onClick={back} className="btn bg-amber-300"><FaArrowLeft></FaArrowLeft>Back</button></Link>
             </div>
 
         </div>
