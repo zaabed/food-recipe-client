@@ -2,7 +2,8 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../../assets/images/logo1.jpg';
 import { AuthContext } from '../../../providers/AuthProvider';
-import { FaLocationArrow, FaUserCircle } from "react-icons/fa";
+// import { FaLocationArrow, FaUserCircle } from "react-icons/fa";
+// import ActiveLink from '../../../ActiveLink/ActiveLink';
 
 const Header = () => {
 
@@ -25,8 +26,7 @@ const Header = () => {
                         <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                             <Link to='/'>Home</Link>
                             <Link to='aboutUs'>About Us</Link>
-                            <Link to='/faq'>FAQ</Link>
-                            <Link to='contactUs'>Contact Us</Link>
+                            <Link to='blogs'>Blogs</Link>
                         </ul>
                     </div>
                     <Link to='/'><img className='w-25 h-14 rounded-md' src={logo} alt="" /></Link>
@@ -35,8 +35,7 @@ const Header = () => {
                     <ul className="menu menu-horizontal px-1 font-semibold">
                         <Link to='/' className='mx-3 hover:hover:bg-amber-100 p-2 rounded'>Home</Link>
                         <Link to='aboutUs' className='mx-3 hover:hover:bg-amber-100 p-2 rounded'>About Us</Link>
-                        <Link to='/faq' className='mx-3 hover:hover:bg-amber-100 p-2 rounded'>FAQ</Link>
-                        <Link to='contactUs' className='mx-3 hover:hover:bg-amber-100 p-2 rounded'>Contact Us</Link>
+                        <Link to='blogs' className='mx-3 hover:hover:bg-amber-100 p-2 rounded'>Blogs</Link>
                     </ul>
                 </div>
                 <div className="navbar-end flex items-start">

@@ -8,14 +8,13 @@ import {
 } from "react-router-dom";
 import Banner from './components/pages/Home/Banner/Banner';
 import AboutUs from './components/pages/AboutUs/AboutUs';
-import FAQ from './components/pages/FAQ/FAQ';
-import ContactUs from './components/pages/Contact Us/ContactUs';
 import Registration from './components/registration&login/Registration/Registration';
 import Login from './components/registration&login/Login/Login';
 import AuthProvider from './providers/AuthProvider';
 import ChefRecipes from './components/pages/Home/ChefRecipes/ChefRecipes';
 import PrivateRoute from './privateRoute/PrivateRoute/PrivateRoute';
-// import Chef from './components/pages/Home/Chef/Chef';
+import Blogs from './components/pages/Blogs/Blogs';
+
 
 const router = createBrowserRouter([
   {
@@ -37,12 +36,8 @@ const router = createBrowserRouter([
         element: <AboutUs></AboutUs>
       },
       {
-        path: '/faq',
-        element: <FAQ></FAQ>
-      },
-      {
-        path: '/contactUs',
-        element: <ContactUs></ContactUs>
+        path: '/blogs',
+        element: <Blogs></Blogs>
       },
       {
         path: '/register',
@@ -53,7 +48,11 @@ const router = createBrowserRouter([
         element: <Login></Login>
       }
     ]
-  }
+  },
+  {
+    path: '*',
+    element: <h1>Page Not Found!!4O4!!!</h1>
+  },
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
